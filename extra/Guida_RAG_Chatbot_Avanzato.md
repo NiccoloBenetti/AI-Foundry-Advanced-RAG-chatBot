@@ -141,7 +141,7 @@ Vedrai a terminale:
 
 ---
 
-# Telemetry and Evaluation
+# Telemetry e Evaluation
 ## 1 Abilita Telemetry logging
 
 1. Aggiungi una risorsa di tipo Application Insights al tuo progetto. Per farlo naviga al tab Tracing sul portale di AI Foundry e crea una nuova risorsa se non ne possiedi già una.
@@ -160,7 +160,7 @@ python chat_with_docs.py --enable-telemetry
 
 Clicca sul link generato nell'output del comando per visualizzare le informazioni di tracing nel portale di AI Foundry.
 
-## 2 Evaluate the app with an evaluation dataset
+## 2 Valutazione dell'applicativo con un dataset di evaluation
 
 1. Per questa parte della guida il processo di valutazione del chatbot si baserà sul dataset "chat_eval_data.jsonl", salvato nella cartella assets. In questo file sono contenute coppie di domande e risposte attese (queste ultime sono la ground truth).
 
@@ -178,7 +178,7 @@ python evaluate.py
 
 4. Al termine del processo verrà restituito come output un link all'interfaccia di AI Foundry, dove potrai visualizzare graficamente i risultati dell'evaluation. 
 
-## 3 Safety and risk evaluation after the generation of each response
+## 3 Safety and risk evaluation dopo la generazione di ogni risposta
 E' possibile introdurre un controllo dopo la generazione di ogni singola risposta da parte dell'assistente AI. In questo caso il controllo che viene eseguito è sulla sicurezza dei contenuti grazie all'evaluator di **conent safety** del SDK di AI Foundry.
 
 1. Installa il seguente pacchetto:
