@@ -80,7 +80,7 @@ def get_documents(messages: list, context: dict = None) -> dict:
 
     return documents
 
-# create a project client using environment variables loaded from the .env file
+# create a project client using environment variables loaded from the credentials.env file
 project = AIProjectClient.from_connection_string(
     conn_str=os.environ["AIPROJECT_CONNECTION_STRING"], credential=DefaultAzureCredential()
 )

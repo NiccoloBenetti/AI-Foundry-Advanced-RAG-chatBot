@@ -8,7 +8,7 @@ from azure.identity import DefaultAzureCredential
 from azure.ai.projects import AIProjectClient
 from azure.ai.inference.tracing import AIInferenceInstrumentor
 
-# load environment variables from the .env file
+# load environment variables from the credentials.env file
 from dotenv import load_dotenv
 
 load_dotenv()
