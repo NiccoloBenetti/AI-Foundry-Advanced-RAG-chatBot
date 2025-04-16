@@ -7,6 +7,7 @@ from config import ASSET_PATH, get_logger, enable_telemetry
 from get_documents import get_documents
 from azure.ai.inference.prompts import PromptTemplate
 from azure.ai.evaluation import ContentSafetyEvaluator
+import json
 
 
 # initialize logging and tracing objects
@@ -83,7 +84,7 @@ if __name__ == "__main__":
 
             if args.enable_evaluation:
                 safety_score = safety_evaluator(query = user_input, response = ai_message)
-                logger.debug(f"🦺 Safety score: {safety_score}")
+                logger.debug("🦺 Safety score:\n%s", json.dumps(safety_score, indent=4, ensure_ascii=False))
                 for evaluator in evaluators:
                     if safety_score[evaluator] != "Very low":
                         ai_message = f"This response was blocked by the content safety evaluator"

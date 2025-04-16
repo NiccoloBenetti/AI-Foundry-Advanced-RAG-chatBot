@@ -5,3 +5,6 @@ azure-search-documents
 pandas
 python-dotenv
 opentelemetry-api
+dotenv
+azure-monitor-opentelemetry
+azure-ai-evaluation
