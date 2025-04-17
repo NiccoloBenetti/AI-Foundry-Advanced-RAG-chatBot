@@ -8,11 +8,14 @@ from get_documents import get_documents
 from azure.ai.inference.prompts import PromptTemplate
 from azure.ai.evaluation import ContentSafetyEvaluator
 import json
+from dotenv import load_dotenv
 
 
 # initialize logging and tracing objects
 logger = get_logger(__name__)
 tracer = trace.get_tracer(__name__)
+
+load_dotenv("credentials.env", override=True)
 
 # create a project client using environment variables loaded from the credentials.env file
 project = AIProjectClient.from_connection_string(
