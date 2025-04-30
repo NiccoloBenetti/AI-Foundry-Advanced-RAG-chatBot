@@ -1,3 +1,5 @@
+.vscode
 __pycache__/
 credentials.env
 myevalresults.json
+extra/sample_questions.txt
