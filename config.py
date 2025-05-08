@@ -18,7 +18,7 @@ ASSET_PATH = pathlib.Path(__file__).parent.resolve() / "assets"
 
 # Configure an root app logger that prints info level logs to stdout
 logger = logging.getLogger("app")
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.DEBUG)
 logger.addHandler(logging.StreamHandler(stream=sys.stdout))
 
 

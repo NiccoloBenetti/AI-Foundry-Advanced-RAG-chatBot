@@ -75,7 +75,7 @@ if __name__ == "__main__":
                                             credential=DefaultAzureCredential())
         
     while True:
-        user_input = input("You: ")
+        user_input = input("👤 You: ")
         if user_input.lower().strip() == "exit":
             print("Chat terminated!")
             break
@@ -92,7 +92,7 @@ if __name__ == "__main__":
                     if safety_score[evaluator] != "Very low":
                         ai_message = f"This response was blocked by the content safety evaluator"
 
-            print(f"AI: {ai_message}\n")
+            print(f"🤖 AI: {ai_message}\n")
             history.append({"role": "assistant", "content": ai_message})
         except Exception as e:
             print(f"An error occurred: {e}")

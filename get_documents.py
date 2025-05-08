@@ -34,7 +34,7 @@ def get_documents(messages: list, context: dict = None) -> dict:
     )
 
     search_query = intent_mapping_response.choices[0].message.content
-    logger.debug(f"🧠 Intent mapping: {search_query}")
+    logger.debug(f"\n🧠 Intent mapping: {search_query}")
 
     # generate a vector representation of the search query
     embedding = embeddings.embed(model=os.environ["EMBEDDINGS_MODEL"], input=search_query)
@@ -74,9 +74,16 @@ def get_documents(messages: list, context: dict = None) -> dict:
         context["grounding_data"] = []
     context["grounding_data"].append(documents)
 
-    logger.debug(f"📄 {len(documents)} documents retrieved:\n" + "\n\n".join(
-        f"Document {doc['id']} : {doc['title']}\n{doc['chunk']}" for doc in documents
-    ))
+    logger.debug(
+    f"\n📄 {len(documents)} documents retrieved:\n" +
+    "\n\n".join(
+        f"{i+1}. Document {doc['id']} : {doc['title']}\n" +
+        "\n".join(f"    {line}" for line in doc["chunk"].splitlines())
+        for i, doc in enumerate(documents)
+    )
+)
+
+    logger.debug(f"--------------------------------------------------------------------------------------------------\n")
 
     return documents
 
