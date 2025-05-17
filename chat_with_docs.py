@@ -96,3 +96,4 @@ if __name__ == "__main__":
             history.append({"role": "assistant", "content": ai_message})
         except Exception as e:
             print(f"An error occurred: {e}")
+            history.pop()
